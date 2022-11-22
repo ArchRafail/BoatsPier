@@ -10,6 +10,16 @@ public class Main {
 
     public static void main(String[] args) {
         Pier pier = new Pier();
+        if (TIME_BETWEEN_PASSENGERS <= 0 || TIME_BETWEEN_BOATS < TIME_BETWEEN_PASSENGERS ||
+                MAXIMUM_PASSENGER_ON_THE_PIER < 1) {
+            System.out.println("It is impossible to do any calculates with current parameters:");
+            System.out.println("Time between passengers has to be more than 0, current " + TIME_BETWEEN_PASSENGERS);
+            System.out.println("Time between boats has to be more that time between passengers, current " +
+                    TIME_BETWEEN_BOATS);
+            System.out.println("Maximum passengers on the station has to be more than 0, current " +
+                    MAXIMUM_PASSENGER_ON_THE_PIER);
+            return;
+        }
         while(true) {
             pier.addBoat();
             for (int i = 0; i < TIME_BETWEEN_BOATS/TIME_BETWEEN_PASSENGERS; i ++ ) {
