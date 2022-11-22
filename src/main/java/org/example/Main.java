@@ -45,7 +45,7 @@ public class Main {
                         averagePassengerTimeOnThePier += pier.getPassengers().remove().getTimeOnTheStation();
                     }
                     averagePassengerTimeOnThePier /= pier.getBoat().getSeats();
-                    System.out.println("\nThe boat was with " + pier.getBoat().getSeats() + " seats. The average " +
+                    System.out.println("\nThe boat arrived with " + pier.getBoat().getSeats() + " seats. The average " +
                             "time of passenger's waiting for the boat is " +
                             String.format(Locale.US, "%.2f", averagePassengerTimeOnThePier) +
                             " minutes.");
@@ -53,7 +53,7 @@ public class Main {
                         System.out.println("This boat (with " + pier.getBoat().getSeats() +
                                 " seats) has to travel each " + boatTime + " minutes.");
                         System.out.println("After " + tripsQuantityBeforeN + " times, quantity of passengers " +
-                                "on pier will be less than " + MAXIMUM_PASSENGER_ON_THE_PIER);
+                                "on the pier will be less than " + MAXIMUM_PASSENGER_ON_THE_PIER);
                     }
                     pier.removeBoat();
                 }
@@ -64,6 +64,7 @@ public class Main {
                 }
             }
             if(pier.getBoat() != null) {
+                System.out.print("\nThe boat arrived to the last station. Nobody is leaving the pier.");
                 pier.removeBoat();
             }
             System.out.print("\nDo you want to stop the simulation of the pier? yes/(any other key): ");
